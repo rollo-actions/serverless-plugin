@@ -1,0 +1,13 @@
+name: serverless-plugin
+description: Install Serverless Plugin
+inputs:
+  name:
+    description: Serverless plugin name
+    required: true
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Install Serverless Plugin ${{ inputs.name }}
+      shell: sh
+      run: serverless plugin install -n ${{ inputs.name }}
